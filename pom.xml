@@ -177,10 +177,10 @@
 	</dependencies>
 	<build>
     <plugins>
-    <plugin>
+   <plugin>
   <groupId>net.masterthought</groupId>
   <artifactId>maven-cucumber-reporting</artifactId>
-  <version>5.7.4</version> <!-- Or latest version -->
+  <version>5.7.4</version>
   <executions>
     <execution>
       <id>generate-cucumber-html-report</id>
@@ -190,12 +190,15 @@
       </goals>
       <configuration>
         <projectName>ZeroBank Capstone Project</projectName>
-        <outputDirectory>${project.build.directory}/cucumber-html-reports</outputDirectory>
-        <cucumberOutput>${project.build.directory}/cucumber-reports-json/Cucumber.json</cucumberOutput>
+        <reportOutputDirectory>${project.build.directory}/cucumber-reports.html</reportOutputDirectory>
+        <jsonFiles>
+          <param>${project.build.directory}/cucumber-reports-json/Cucumber.json</param>
+        </jsonFiles>
       </configuration>
     </execution>
   </executions>
 </plugin>
+
 
         <plugin>
             <groupId>io.qameta.allure</groupId>
